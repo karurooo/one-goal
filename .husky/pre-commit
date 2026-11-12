@@ -1,0 +1,5 @@
+# Lint and format-check only the staged files
+files=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$files" ] && exit 0
+git diff --cached --name-only --diff-filter=ACM -z | xargs -0 -r npx prettier --check --ignore-unknown
+git diff --cached --name-only --diff-filter=ACM -z -- '*.ts' '*.tsx' '*.js' | xargs -0 -r npx eslint
