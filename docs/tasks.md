@@ -27,7 +27,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | P2-2 | GameCanvas props + `draw` signature | B | Patrick | none | done (#4) |
 | P2-3 | Leaderboard types, API stubs, nickname schema, ERD | D | Patrick | none | done (#4) |
 | P2-4 | Wireframes: Start, HUD, Game Over | C | | none | todo |
-| P2-5 | Max-score formula (written down, signed off by A) | D + A | Carlo | P2-1 | review |
+| P2-5 | Max-score formula (written down, signed off by A) | D + A | Carlo | P2-1 | done (#18) |
 | S1-1 | Supabase client + env | D | Carlo | none | done (#5) |
 | S1-2 | Turn on anonymous sign-in, smoke-test `ensureSession` | D | Carlo | S1-1 | done |
 | S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6), gaps: no wander turn rate, critter radius or start count in CONFIG (radius 18 hard-coded in GameCanvas); Q1 `fastCritter.radius` and `capWithinMs` → `windowMs` rename not done |
@@ -47,14 +47,14 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S2-7 | HUD atoms + `Hud` molecule | C | | S1-9, P2-4 | todo |
 | S2-8 | StartScreen + GameOverPanel + Esc/Enter | C | | S1-10, P2-4 | todo |
 | S2-9 | `usePersonalBest` | C | Cliff | none | todo |
-| S2-10 | Apply `scores` migration + verify RLS | D | Carlo | P2-3 | review |
+| S2-10 | Apply `scores` migration + verify RLS | D | Carlo | P2-3 | done (#17) |
 | S3-1 | Difficulty phases | A | | S2-2 | todo |
 | S3-2 | Fast critters (+25) | A | | S3-1 | todo |
 | S3-3 | Combo (+5/step, cap +25, 1 s window) | A | | S2-1 | todo |
 | S3-4 | Bombs (−20, 2 s ×2 scatter) | A | | S3-1 | todo |
 | S3-5 | Render critter types | B | | S1-8 | todo |
 | S3-6 | ComboBadge + best combo on Game Over | C | | S2-7, S3-3 | todo |
-| S3-7 | `submit_score()` RPC | D | | S2-10, P2-5 | todo |
+| S3-7 | `submit_score()` RPC | D | Carlo | S2-10, P2-5 | review |
 | S4-1 | `fetchTop10` + `submitScore` bodies | D | | S3-7, S1-2 | todo |
 | S4-2 | LeaderboardTable + `/leaderboard` page | D | | S4-1 | todo |
 | S4-3 | NicknameForm | C | | P2-3 | todo |
