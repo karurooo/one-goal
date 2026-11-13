@@ -1,0 +1,4 @@
+export * from '@/features/game/types'
+export * from '@/features/game/constants/config'
+export { GameCanvas } from '@/features/game/components/organisms/GameCanvas'
+export type { GameCanvasProps } from '@/features/game/components/organisms/GameCanvas'
