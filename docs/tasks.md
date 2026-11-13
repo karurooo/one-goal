@@ -22,7 +22,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 |---|---|---|---|---|---|
 | S0-1 | Tooling, hooks, CI, branches | D | Carlo | none | done (#1) |
 | S0-2 | App shell, router, theme | C | Patrick | none | done (#3) |
-| S0-3 | Page title "Scatter & Catch" | C | Cliff | none | todo |
+| S0-3 | Page title "Scatter & Catch" | C | Cliff | none | done (#13) |
 | P2-1 | Game types + engine API stubs | A | Patrick | none | done (#4) |
 | P2-2 | GameCanvas props + `draw` signature | B | Patrick | none | done (#4) |
 | P2-3 | Leaderboard types, API stubs, nickname schema, ERD | D | Patrick | none | done (#4) |
@@ -30,12 +30,12 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | P2-5 | Max-score formula (written down, signed off by A) | D + A | | P2-1 | todo |
 | S1-1 | Supabase client + env | D | Carlo | none | done (#5) |
 | S1-2 | Turn on anonymous sign-in, smoke-test `ensureSession` | D | | S1-1 | todo |
-| S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6) |
-| S1-4 | `critter.step()`: wander + wall bounce | A | Patrick | S1-3 | done (#6) |
-| S1-5 | `critter.step()`: flee from pointer | A | Patrick | S1-4 | done (#6) |
+| S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6), gaps: no wander turn rate, critter radius or start count in CONFIG (radius 18 hard-coded in GameCanvas); Q1 `fastCritter.radius` and `capWithinMs` → `windowMs` rename not done |
+| S1-4 | `critter.step()`: wander + wall bounce | A | Patrick | S1-3 | done (#6), gaps: tests cover 2 of 4 walls; no constant-speed test |
+| S1-5 | `critter.step()`: flee from pointer | A | Patrick | S1-4 | done (#6), gaps: flee lives in `step()`, `attract()` is still a stub, `pointer` not on `GameState`; no pointer-on-critter NaN test |
 | S1-6 | DPR canvas + resize | B | Patrick | P2-2 | done (#8) |
 | S1-7 | `useGameLoop`: rAF + delta time | B | Patrick | S1-6 | done (#8) |
-| S1-8 | Pointer tracking + plain-circle `draw` | B | Patrick | S1-7, S1-4 | doing (#8: placeholder circles; not wired to `critter.step()` + pointer yet) |
+| S1-8 | Pointer tracking + plain-circle `draw` | B | Patrick | S1-7, S1-4 | done (#8, #14) |
 | S1-9 | `gameStore` screen machine | C | Patrick | P2-1 | done (#9) |
 | S1-10 | Placeholder PlayPage wired to store + canvas | C | Cliff | S1-9, S1-6 | todo |
 | S2-1 | `tap()`: nearest-first single catch | A | | S1-4 | todo |
