@@ -22,7 +22,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 |---|---|---|---|---|---|
 | S0-1 | Tooling, hooks, CI, branches | D | Carlo | none | done (#1) |
 | S0-2 | App shell, router, theme | C | Patrick | none | done (#3) |
-| S0-3 | Page title "Scatter & Catch" | C | Cliff | none | todo |
+| S0-3 | Page title "Scatter & Catch" | C | Cliff | none | done (#13) |
 | P2-1 | Game types + engine API stubs | A | Patrick | none | done (#4) |
 | P2-2 | GameCanvas props + `draw` signature | B | Patrick | none | done (#4) |
 | P2-3 | Leaderboard types, API stubs, nickname schema, ERD | D | Patrick | none | done (#4) |
@@ -35,10 +35,10 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S1-5 | `critter.step()`: flee from pointer | A | Patrick | S1-4 | done (#6) |
 | S1-6 | DPR canvas + resize | B | Patrick | P2-2 | done (#8) |
 | S1-7 | `useGameLoop`: rAF + delta time | B | Patrick | S1-6 | done (#8) |
-| S1-8 | Pointer tracking + plain-circle `draw` | B | Patrick | S1-7, S1-4 | doing (#8: placeholder circles; not wired to `critter.step()` + pointer yet) |
+| S1-8 | Pointer tracking + plain-circle `draw` | B | Patrick | S1-7, S1-4 | done (#14) |
 | S1-9 | `gameStore` screen machine | C | Patrick | P2-1 | done (#9) |
 | S1-10 | Placeholder PlayPage wired to store + canvas | C | Cliff | S1-9, S1-6 | todo |
-| S2-1 | `tap()`: nearest-first single catch | A | | S1-4 | todo |
+| S2-1 | `tap()`: nearest-first single catch | A | Patrick | S1-4 | review (feat/tap-catch) |
 | S2-2 | Round timer + `startRound` + game over | A | | S1-3 | todo |
 | S2-3 | Respawn at the far edge | A | | S1-5 | todo |
 | S2-4 | Tap input + 0.5 s touch linger | B | | S1-8, S2-1 | todo |
