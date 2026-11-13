@@ -54,8 +54,8 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S3-4 | Bombs (−20, 2 s ×2 scatter) | A | | S3-1 | todo |
 | S3-5 | Render critter types | B | | S1-8 | todo |
 | S3-6 | ComboBadge + best combo on Game Over | C | | S2-7, S3-3 | todo |
-| S3-7 | `submit_score()` RPC | D | Carlo | S2-10, P2-5 | review |
-| S4-1 | `fetchTop10` + `submitScore` bodies | D | | S3-7, S1-2 | todo |
+| S3-7 | `submit_score()` RPC | D | Carlo | S2-10, P2-5 | done (#19) |
+| S4-1 | `fetchTop10` + `submitScore` bodies | D | Carlo | S3-7, S1-2 | review |
 | S4-2 | LeaderboardTable + `/leaderboard` page | D | | S4-1 | todo |
 | S4-3 | NicknameForm | C | | P2-3 | todo |
 | S4-4 | Submit flow + Top 10 on Game Over | C | | S4-3, S4-1, S2-8 | todo |
