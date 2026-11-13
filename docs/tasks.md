@@ -29,7 +29,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | P2-4 | Wireframes: Start, HUD, Game Over | C | | none | todo |
 | P2-5 | Max-score formula (written down, signed off by A) | D + A | | P2-1 | todo |
 | S1-1 | Supabase client + env | D | Carlo | none | done (#5) |
-| S1-2 | Turn on anonymous sign-in, smoke-test `ensureSession` | D | | S1-1 | todo |
+| S1-2 | Turn on anonymous sign-in, smoke-test `ensureSession` | D | Carlo | S1-1 | done |
 | S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6) |
 | S1-4 | `critter.step()`: wander + wall bounce | A | Patrick | S1-3 | done (#6) |
 | S1-5 | `critter.step()`: flee from pointer | A | Patrick | S1-4 | done (#6) |
@@ -47,7 +47,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S2-7 | HUD atoms + `Hud` molecule | C | | S1-9, P2-4 | todo |
 | S2-8 | StartScreen + GameOverPanel + Esc/Enter | C | | S1-10, P2-4 | todo |
 | S2-9 | `usePersonalBest` | C | Cliff | none | todo |
-| S2-10 | Apply `scores` migration + verify RLS | D | | P2-3 | todo |
+| S2-10 | Apply `scores` migration + verify RLS | D | Carlo | P2-3 | review |
 | S3-1 | Difficulty phases | A | | S2-2 | todo |
 | S3-2 | Fast critters (+25) | A | | S3-1 | todo |
 | S3-3 | Combo (+5/step, cap +25, 1 s window) | A | | S2-1 | todo |
@@ -249,7 +249,7 @@ Team: **Carlo** (D) · **Patrick** (A, B) · **Cliff** (C). Assignees for done t
 
 ### S2-10 · Apply scores migration
 - **Branch:** `feat/scores-table-migration`
-- **Spec:** Review `supabase/migrations/20260101000000_create_scores_table.sql` and rename it with a real timestamp. Decide whether a round score can go negative because of bombs. If it can, either the engine clamps it at 0 (tell A) or the `score >= 0` check changes. Apply the migration to the dev project.
+- **Spec:** Review `supabase/migrations/20261113062754_create_scores_table.sql` and rename it with a real timestamp. Decide whether a round score can go negative because of bombs. If it can, either the engine clamps it at 0 (tell A) or the `score >= 0` check changes. Apply the migration to the dev project.
 - **Acceptance:**
   - [ ] The table and index exist on the dev project
   - [ ] As `anon`, `select` works and `insert`/`update`/`delete` fail (SQL editor)
@@ -426,5 +426,5 @@ Merge `staging` → `main` with approval, deploy to production, then smoke-test:
 | # | Question | Owner | Blocks |
 |---|---|---|---|
 | Q1 | `CONFIG.fastCritter.radius: 160`: is it the flee radius or the body size? | A | S1-3 |
-| Q2 | Can a score go negative after bombs? The engine would clamp at 0, or the SQL check changes | A + D | S2-10, S3-4 |
+| Q2 | Can a score go negative after bombs? The engine would clamp at 0, or the SQL check changes (proposed by D: engine clamps at 0, SQL keeps `score >= 0`; A to confirm) | A + D | S2-10, S3-4 |
 | Q3 | Assumed max human tap rate for `MAX_SCORE` (proposal: 8/s) | A + D | P2-5 |
