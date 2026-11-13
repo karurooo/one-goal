@@ -6,3 +6,4 @@ export {
   useTop10,
   useSubmitScore,
 } from '@/features/leaderboard/api/scores'
+export { LeaderboardTable } from '@/features/leaderboard/components/organisms/LeaderboardTable'

@@ -39,6 +39,7 @@ export function useTop10() {
   return useQuery({
     queryKey: TOP10_KEY,
     queryFn: fetchTop10,
+    enabled: supabase !== null,
   })
 }
 

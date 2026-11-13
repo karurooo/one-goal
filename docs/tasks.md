@@ -55,8 +55,8 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S3-5 | Render critter types | B | | S1-8 | todo |
 | S3-6 | ComboBadge + best combo on Game Over | C | | S2-7, S3-3 | todo |
 | S3-7 | `submit_score()` RPC | D | Carlo | S2-10, P2-5 | done (#19) |
-| S4-1 | `fetchTop10` + `submitScore` bodies | D | Carlo | S3-7, S1-2 | review |
-| S4-2 | LeaderboardTable + `/leaderboard` page | D | | S4-1 | todo |
+| S4-1 | `fetchTop10` + `submitScore` bodies | D | Carlo | S3-7, S1-2 | done (#22) |
+| S4-2 | LeaderboardTable + `/leaderboard` page | D | Carlo | S4-1 | review |
 | S4-3 | NicknameForm | C | | P2-3 | todo |
 | S4-4 | Submit flow + Top 10 on Game Over | C | | S4-3, S4-1, S2-8 | todo |
 | S4-5 | Score-ceiling test | A | | S3-2, S3-3, S3-4, S3-7 | todo |
