@@ -1,4 +1,5 @@
 import { CONFIG } from '@/features/game/constants/config'
+import { step } from '@/features/game/lib/critter'
 import type {
   Critter,
   GameState,
@@ -122,9 +123,10 @@ export function attract(game: GameState): void {
 }
 
 /**
- * Counts the round timer down while playing, ends the round at 0, and
+ * Counts the round timer down while playing, ends the round at 0,
+ * advances every critter through critter.step(), prunes dead ones, and
  * tops up to 5 fresh critters (far from the pointer) whenever fewer than
- * CONFIG.minCritters are alive.
+ * CONFIG.minCritters remain alive.
  */
 export function update(game: GameState, dt: number): void {
   if (game.screen !== 'playing') return
@@ -136,8 +138,13 @@ export function update(game: GameState, dt: number): void {
     return
   }
 
-  const aliveCount = game.critters.filter((critter) => critter.alive).length
-  if (aliveCount < CONFIG.minCritters) {
+  game.critters = game.critters.filter((critter) => critter.alive)
+
+  for (const critter of game.critters) {
+    step(critter, game.width, game.height, game.pointer, dt)
+  }
+
+  if (game.critters.length < CONFIG.minCritters) {
     game.critters.push(...spawnAtFarEdge(game, 5))
   }
 }
