@@ -1,7 +1,13 @@
 -- ERD contract for the leaderboard feature (owned by D, signed off with A).
 -- Score floor (Q2): the engine clamps the round score at 0, so a bomb can
 -- never make it negative; hence check (score >= 0).
--- Max score ceiling (P2-5) is enforced in submit_score() (S3-7), not here.
+-- Max score ceiling (P2-5), enforced in submit_score() (S3-7), not here:
+--   MAX_SCORE = taps/s * phase0 seconds * (pointsPerCatch + combo cap)
+--             + taps/s * (phase1 + phase2 seconds) * (fast bonus + combo cap)
+--             = 8 * 10 * (10 + 25) + 8 * 20 * (25 + 25) = 10800
+--   Assumes 8 taps/s (Q3), every tap catches, bombs never tapped, combo always
+--   at cap, and fast critters always available from phase 1. Source of truth:
+--   MAX_SCORE in src/features/game/constants/config.ts.
 
 create table if not exists public.scores (
   id uuid primary key default gen_random_uuid(),
