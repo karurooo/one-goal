@@ -27,7 +27,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | P2-2 | GameCanvas props + `draw` signature | B | Patrick | none | done (#4) |
 | P2-3 | Leaderboard types, API stubs, nickname schema, ERD | D | Patrick | none | done (#4) |
 | P2-4 | Wireframes: Start, HUD, Game Over | C | | none | todo |
-| P2-5 | Max-score formula (written down, signed off by A) | D + A | | P2-1 | todo |
+| P2-5 | Max-score formula (written down, signed off by A) | D + A | Carlo | P2-1 | review |
 | S1-1 | Supabase client + env | D | Carlo | none | done (#5) |
 | S1-2 | Turn on anonymous sign-in, smoke-test `ensureSession` | D | Carlo | S1-1 | done |
 | S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6), gaps: no wander turn rate, critter radius or start count in CONFIG (radius 18 hard-coded in GameCanvas); Q1 `fastCritter.radius` and `capWithinMs` → `windowMs` rename not done |
@@ -427,4 +427,4 @@ Merge `staging` → `main` with approval, deploy to production, then smoke-test:
 |---|---|---|---|
 | Q1 | `CONFIG.fastCritter.radius: 160`: is it the flee radius or the body size? | A | S1-3 |
 | Q2 | Can a score go negative after bombs? The engine would clamp at 0, or the SQL check changes (proposed by D: engine clamps at 0, SQL keeps `score >= 0`; A to confirm) | A + D | S2-10, S3-4 |
-| Q3 | Assumed max human tap rate for `MAX_SCORE` (proposal: 8/s) | A + D | P2-5 |
+| Q3 | Assumed max human tap rate for `MAX_SCORE` (proposal: 8/s; used in P2-5, A to confirm) | A + D | P2-5 |
