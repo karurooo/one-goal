@@ -41,6 +41,8 @@ export type GameState = {
   combo: number
   bestCombo: number
   lastCatchAt: number
+  /** Last known pointer position, set by the caller before update()/tap(). */
+  pointer: Pointer
 }
 
 export type RoundStats = {

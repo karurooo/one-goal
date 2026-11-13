@@ -8,6 +8,7 @@ export const CONFIG = {
   pointsPerCatch: 10,
   catchRadiusPadding: 8, // px added to critter radius for a successful tap
   minCritters: 5, // respawn threshold
+  critterRadius: 18, // px, default critter size
 
   movement: {
     wanderSpeed: 40, // px/s
