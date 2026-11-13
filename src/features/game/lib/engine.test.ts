@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { CONFIG } from '@/features/game/constants/config'
-import { createGame, tap } from '@/features/game/lib/engine'
+import { createGame, startRound, tap, update } from '@/features/game/lib/engine'
 import type { Critter, GameState } from '@/features/game/types'
 
 function makeCritter(overrides: Partial<Critter> = {}): Critter {
@@ -63,5 +63,28 @@ describe('tap', () => {
     expect(result).toBeNull()
     expect(critter.alive).toBe(true)
     expect(game.score).toBe(0)
+  })
+})
+
+describe('startRound + update', () => {
+  it('ends the round and clamps the timer to exactly 0 after roundSeconds', () => {
+    const game = createGame(400, 400)
+    startRound(game)
+
+    update(game, CONFIG.roundSeconds)
+
+    expect(game.screen).toBe('over')
+    expect(game.timeRemaining).toBe(0)
+  })
+
+  it('does not lose time while paused', () => {
+    const game = createGame(400, 400)
+    startRound(game)
+    game.screen = 'paused'
+
+    update(game, 5)
+
+    expect(game.screen).toBe('paused')
+    expect(game.timeRemaining).toBe(CONFIG.roundSeconds)
   })
 })

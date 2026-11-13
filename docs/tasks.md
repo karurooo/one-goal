@@ -39,7 +39,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S1-9 | `gameStore` screen machine | C | Patrick | P2-1 | done (#9) |
 | S1-10 | Placeholder PlayPage wired to store + canvas | C | Cliff | S1-9, S1-6 | todo |
 | S2-1 | `tap()`: nearest-first single catch | A | Patrick | S1-4 | review (feat/tap-catch) |
-| S2-2 | Round timer + `startRound` + game over | A | | S1-3 | todo |
+| S2-2 | Round timer + `startRound` + game over | A | Patrick | S1-3 | review (feat/round-timer) |
 | S2-3 | Respawn at the far edge | A | | S1-5 | todo |
 | S2-4 | Tap input + 0.5 s touch linger | B | | S1-8, S2-1 | todo |
 | S2-5 | ~10 Hz HUD push + `onOver` | B | | S1-7, S2-2 | todo |

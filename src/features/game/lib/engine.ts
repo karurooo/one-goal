@@ -22,9 +22,34 @@ export function createGame(width: number, height: number): GameState {
   }
 }
 
+function spawnCritters(
+  count: number,
+  width: number,
+  height: number,
+): Critter[] {
+  return Array.from({ length: count }, (_, i) => ({
+    id: `critter-${Date.now()}-${i}`,
+    type: 'blob',
+    x: Math.random() * width,
+    y: Math.random() * height,
+    vx: 0,
+    vy: 0,
+    radius: 18,
+    alive: true,
+    squash: 0,
+  }))
+}
+
+/** Resets score/caught/combo/critters and starts the 30s round. */
 export function startRound(game: GameState): void {
-  void game
-  throw new Error('not implemented')
+  game.critters = spawnCritters(CONFIG.minCritters, game.width, game.height)
+  game.particles = []
+  game.score = 0
+  game.caught = 0
+  game.combo = 0
+  game.lastCatchAt = 0
+  game.timeRemaining = CONFIG.roundSeconds
+  game.screen = 'playing'
 }
 
 /** Flee behavior: critters move away from the pointer. */
@@ -33,11 +58,15 @@ export function attract(game: GameState): void {
   throw new Error('not implemented')
 }
 
-/** Advances the simulation by `dt` seconds. */
+/** Counts the round timer down while playing; ends the round at 0. */
 export function update(game: GameState, dt: number): void {
-  void game
-  void dt
-  throw new Error('not implemented')
+  if (game.screen !== 'playing') return
+
+  game.timeRemaining = Math.max(0, game.timeRemaining - dt)
+  if (game.timeRemaining <= 0) {
+    game.timeRemaining = 0
+    game.screen = 'over'
+  }
 }
 
 /** Nearest-first single catch within radius + CONFIG.catchRadiusPadding. */
