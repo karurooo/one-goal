@@ -9,6 +9,14 @@ export const CONFIG = {
   catchRadiusPadding: 8, // px added to critter radius for a successful tap
   minCritters: 5, // respawn threshold
 
+  movement: {
+    wanderSpeed: 40, // px/s
+    fleeSpeed: 160, // px/s
+    fleeRadius: 120, // px: pointer closer than this triggers flee
+    squashAmount: 0.3,
+    squashDecayPerSecond: 2,
+  },
+
   difficultyPhases: {
     // seconds remaining at which each phase starts
     phase1At: 20,
