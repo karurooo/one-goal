@@ -1,0 +1,6 @@
+# Blueprint commit format: <type>: <description>
+if ! head -1 "$1" | grep -qE '^((feat|fix|style|refactor|chore|docs|test): .+|Merge .+|Revert .+)'; then
+  echo "Commit message must start with feat:, fix:, style:, refactor:, chore:, docs: or test:"
+  echo "Example: feat: add critter flee behavior"
+  exit 1
+fi
