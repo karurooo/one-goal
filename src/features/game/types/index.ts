@@ -11,7 +11,11 @@ export type Critter = {
   vy: number
   radius: number
   alive: boolean
+  /** 0 = normal, >0 = squashed from a recent wall bounce; decays to 0. */
+  squash: number
 }
+
+export type Pointer = { x: number; y: number } | null
 
 export type Particle = {
   x: number
