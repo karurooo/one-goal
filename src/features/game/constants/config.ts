@@ -42,4 +42,25 @@ export const CONFIG = {
     scatterDurationMs: 2000,
     scatterMultiplier: 2,
   },
+
+  maxTapsPerSecond: 8, // assumed human ceiling (Q3), only used for MAX_SCORE
 } as const
+
+/**
+ * P2-5: upper bound on a perfect round's score. Assumes every tap catches,
+ * bombs are never tapped and the combo bonus is always at its cap.
+ * Phase 0 has no fast critters, so each catch is pointsPerCatch + cap.
+ * From phase 1 on, fast critters respawn to keep their count, so in the bound
+ * every catch is a fast one: bonusPoints + cap.
+ * Mirrored as a literal in submit_score() (S3-7); keep both in sync.
+ */
+const { roundSeconds, pointsPerCatch, maxTapsPerSecond, difficultyPhases } =
+  CONFIG
+const phase0Seconds = roundSeconds - difficultyPhases.phase1At
+const comboCap = CONFIG.combo.capPoints
+
+export const MAX_SCORE =
+  maxTapsPerSecond * phase0Seconds * (pointsPerCatch + comboCap) +
+  maxTapsPerSecond *
+    difficultyPhases.phase1At *
+    (CONFIG.fastCritter.bonusPoints + comboCap)
