@@ -30,9 +30,9 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | P2-5 | Max-score formula (written down, signed off by A) | D + A | Carlo | P2-1 | done (#18) |
 | S1-1 | Supabase client + env | D | Carlo | none | done (#5) |
 | S1-2 | Turn on anonymous sign-in, smoke-test `ensureSession` | D | Carlo | S1-1 | done |
-| S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6), gaps: no wander turn rate, critter radius or start count in CONFIG (radius 18 hard-coded in GameCanvas); Q1 `fastCritter.radius` and `capWithinMs` → `windowMs` rename not done |
+| S1-3 | Finish CONFIG for movement | A | Patrick | P2-1 | done (#6), `critterRadius` added (feat/respawn); gaps: no wander turn rate; Q1 `fastCritter.radius` and `capWithinMs` → `windowMs` rename not done |
 | S1-4 | `critter.step()`: wander + wall bounce | A | Patrick | S1-3 | done (#6), gaps: tests cover 2 of 4 walls; no constant-speed test |
-| S1-5 | `critter.step()`: flee from pointer | A | Patrick | S1-4 | done (#6), gaps: flee lives in `step()`, `attract()` is still a stub, `pointer` not on `GameState`; no pointer-on-critter NaN test |
+| S1-5 | `critter.step()`: flee from pointer | A | Patrick | S1-4 | done (#6), `pointer` added to `GameState` (feat/respawn); gaps: flee lives in `step()`, `attract()` is still a stub; no pointer-on-critter NaN test |
 | S1-6 | DPR canvas + resize | B | Patrick | P2-2 | done (#8) |
 | S1-7 | `useGameLoop`: rAF + delta time | B | Patrick | S1-6 | done (#8) |
 | S1-8 | Pointer tracking + plain-circle `draw` | B | Patrick | S1-7, S1-4 | done (#14) |
@@ -40,7 +40,7 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S1-10 | Placeholder PlayPage wired to store + canvas | C | Cliff | S1-9, S1-6 | todo |
 | S2-1 | `tap()`: nearest-first single catch | A | Patrick | S1-4 | review (feat/tap-catch) |
 | S2-2 | Round timer + `startRound` + game over | A | Patrick | S1-3 | review (feat/round-timer) |
-| S2-3 | Respawn at the far edge | A | | S1-5 | todo |
+| S2-3 | Respawn at the far edge | A | Patrick | S1-5 | review (feat/respawn) |
 | S2-4 | Tap input + 0.5 s touch linger | B | | S1-8, S2-1 | todo |
 | S2-5 | ~10 Hz HUD push + `onOver` | B | | S1-7, S2-2 | todo |
 | S2-6 | Auto-pause on blur / hidden tab | B | | S1-9 | todo |

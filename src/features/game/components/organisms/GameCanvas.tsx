@@ -29,7 +29,7 @@ function makeCritters(count: number): Critter[] {
     y: 40 + ((i * 37) % 160),
     vx: 0,
     vy: 0,
-    radius: 18,
+    radius: CONFIG.critterRadius,
     alive: true,
     squash: 0,
   }))
