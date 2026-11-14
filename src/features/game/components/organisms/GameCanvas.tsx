@@ -1,15 +1,9 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 
-import { CONFIG } from '@/features/game/constants/config'
 import { useGameLoop } from '@/features/game/hooks/useGameLoop'
-import { step } from '@/features/game/lib/critter'
-import type {
-  Critter,
-  HudValues,
-  Pointer,
-  RoundStats,
-} from '@/features/game/types'
+import { createGame, startRound, tap, update } from '@/features/game/lib/engine'
+import type { GameState, HudValues, RoundStats } from '@/features/game/types'
 
 /**
  * Props contract (owned by B). The canvas owns the per-frame loop via
@@ -21,38 +15,44 @@ export type GameCanvasProps = {
   onOver: (stats: RoundStats) => void
 }
 
-function makeCritters(count: number): Critter[] {
-  return Array.from({ length: count }, (_, i) => ({
-    id: `critter-${i}`,
-    type: 'blob',
-    x: 40 + ((i * 53) % 240),
-    y: 40 + ((i * 37) % 160),
-    vx: 0,
-    vy: 0,
-    radius: CONFIG.critterRadius,
-    alive: true,
-    squash: 0,
-  }))
-}
+const HUD_PUSH_INTERVAL_SECONDS = 1 / 10 // ~10 Hz, per S2-5
 
 /**
- * S1-8: tracks the pointer and advances each critter through
- * critter.step() (wander/flee/bounce) every frame, replacing the Sprint 1
- * placeholder circles. Tap-to-catch (tap()) lands in Sprint 2.
+ * Owns the engine's GameState end to end: starts a round on mount,
+ * advances it every frame via update() (movement, timer, respawn), and
+ * resolves taps via tap(). Pushes HUD snapshots at ~10 Hz and reports
+ * onOver once when the round ends.
  */
 export function GameCanvas({ onHud, onOver }: GameCanvasProps) {
-  void onHud
-  void onOver
+  const gameRef = useRef<GameState | null>(null)
+  const hudAccumulatorRef = useRef(0)
+  const roundEndedRef = useRef(false)
+  const touchLingerTimeoutRef = useRef<number | null>(null)
 
-  const pointerRef = useRef<Pointer>(null)
-  const crittersRef = useRef<Critter[]>(makeCritters(CONFIG.minCritters))
+  useEffect(() => {
+    return () => {
+      if (touchLingerTimeoutRef.current !== null) {
+        clearTimeout(touchLingerTimeoutRef.current)
+      }
+    }
+  }, [])
 
   const canvasRef = useGameLoop((ctx, dt) => {
     const { width, height } = ctx.canvas.getBoundingClientRect()
 
-    for (const critter of crittersRef.current) {
-      step(critter, width, height, pointerRef.current, dt)
+    let game = gameRef.current
+    if (!game) {
+      game = createGame(width, height)
+      startRound(game)
+      gameRef.current = game
+    } else {
+      game.width = width
+      game.height = height
+    }
 
+    update(game, dt)
+
+    for (const critter of game.critters) {
       const squashScaleX = 1 + critter.squash
       const squashScaleY = 1 - critter.squash * 0.6
 
@@ -65,29 +65,88 @@ export function GameCanvas({ onHud, onOver }: GameCanvasProps) {
       ctx.fill()
       ctx.restore()
     }
+
+    hudAccumulatorRef.current += dt
+    if (hudAccumulatorRef.current >= HUD_PUSH_INTERVAL_SECONDS) {
+      hudAccumulatorRef.current = 0
+      onHud({
+        score: game.score,
+        timeRemaining: game.timeRemaining,
+        combo: game.combo,
+      })
+    }
+
+    if (game.screen === 'over' && !roundEndedRef.current) {
+      roundEndedRef.current = true
+      onOver({
+        score: game.score,
+        caught: game.caught,
+        bestCombo: game.bestCombo,
+      })
+    }
   })
 
-  function trackPointer(event: ReactPointerEvent<HTMLCanvasElement>) {
+  function pointerPosition(event: ReactPointerEvent<HTMLCanvasElement>) {
     const rect = event.currentTarget.getBoundingClientRect()
-    pointerRef.current = {
+    return {
       x: event.clientX - rect.left,
       y: event.clientY - rect.top,
     }
   }
 
-  function clearPointer() {
-    pointerRef.current = null
+  function clearTouchLinger() {
+    if (touchLingerTimeoutRef.current !== null) {
+      clearTimeout(touchLingerTimeoutRef.current)
+      touchLingerTimeoutRef.current = null
+    }
+  }
+
+  function handlePointerDown(event: ReactPointerEvent<HTMLCanvasElement>) {
+    const game = gameRef.current
+    if (!game) return
+
+    clearTouchLinger()
+    const position = pointerPosition(event)
+    game.pointer = position
+    tap(game, position.x, position.y)
+  }
+
+  function handlePointerMove(event: ReactPointerEvent<HTMLCanvasElement>) {
+    const game = gameRef.current
+    if (game) game.pointer = pointerPosition(event)
+  }
+
+  function handlePointerUp(event: ReactPointerEvent<HTMLCanvasElement>) {
+    const game = gameRef.current
+    if (!game) return
+
+    if (event.pointerType === 'touch') {
+      clearTouchLinger()
+      touchLingerTimeoutRef.current = window.setTimeout(() => {
+        game.pointer = null
+        touchLingerTimeoutRef.current = null
+      }, 500)
+      return
+    }
+
+    game.pointer = null
+  }
+
+  function clearPointerImmediately() {
+    clearTouchLinger()
+    const game = gameRef.current
+    if (game) game.pointer = null
   }
 
   return (
     <canvas
       ref={canvasRef}
       className="h-full w-full touch-none"
-      onPointerDown={trackPointer}
-      onPointerMove={trackPointer}
-      onPointerUp={clearPointer}
-      onPointerLeave={clearPointer}
-      onPointerCancel={clearPointer}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={clearPointerImmediately}
+      onPointerCancel={clearPointerImmediately}
     />
   )
 }

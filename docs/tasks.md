@@ -37,12 +37,12 @@ Statuses: `todo` · `doing` · `review` · `done` · `blocked`
 | S1-7 | `useGameLoop`: rAF + delta time | B | Patrick | S1-6 | done (#8) |
 | S1-8 | Pointer tracking + plain-circle `draw` | B | Patrick | S1-7, S1-4 | done (#14) |
 | S1-9 | `gameStore` screen machine | C | Patrick | P2-1 | done (#9) |
-| S1-10 | Placeholder PlayPage wired to store + canvas | C | Cliff | S1-9, S1-6 | todo |
-| S2-1 | `tap()`: nearest-first single catch | A | Patrick | S1-4 | review (feat/tap-catch) |
-| S2-2 | Round timer + `startRound` + game over | A | Patrick | S1-3 | review (feat/round-timer) |
-| S2-3 | Respawn at the far edge | A | Patrick | S1-5 | review (feat/respawn) |
-| S2-4 | Tap input + 0.5 s touch linger | B | | S1-8, S2-1 | todo |
-| S2-5 | ~10 Hz HUD push + `onOver` | B | | S1-7, S2-2 | todo |
+| S1-10 | Placeholder PlayPage wired to store + canvas | C | Cliff | S1-9, S1-6 | done (#20) |
+| S2-1 | `tap()`: nearest-first single catch | A | Patrick | S1-4 | done (#16) |
+| S2-2 | Round timer + `startRound` + game over | A | Patrick | S1-3 | done (#21) |
+| S2-3 | Respawn at the far edge | A | Patrick | S1-5 | done (#23) |
+| S2-4 | Tap input + 0.5 s touch linger | B | Patrick | S1-8, S2-1 | review (feat/tap-input), also wires S2-5 (full GameCanvas/GameState integration) |
+| S2-5 | ~10 Hz HUD push + `onOver` | B | Patrick | S1-7, S2-2 | review (feat/tap-input, same PR as S2-4) |
 | S2-6 | Auto-pause on blur / hidden tab | B | | S1-9 | todo |
 | S2-7 | HUD atoms + `Hud` molecule | C | | S1-9, P2-4 | todo |
 | S2-8 | StartScreen + GameOverPanel + Esc/Enter | C | | S1-10, P2-4 | todo |
