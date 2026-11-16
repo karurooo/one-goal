@@ -123,7 +123,7 @@ Until T-LAYOUT-01 merges, section owners wrap their section in a plain `<section
       `Hero`, `HeroActions`, `SipaBallArt`, `CourtLines`.
       Done when: AC-HERO-01…03 pass at 1280×720 and 390×844. · Req: FR-HERO-01, FR-HERO-02 · Dep: T-SETUP-04
       Commits: `feat(hero): add headline, tagline and calls to action` · `style(hero): add court lines and sipa ball art`
-- [ ] **T-ABOUT-01 About and mandate.** `Owner: Cliff` · Rev: Patrick · Branch: `feat/about-section`
+- [x] **T-ABOUT-01 About and mandate.** `Owner: Cliff` · Rev: Patrick · Branch: `feat/about-section`
       `About`, `MandateCard`, `CheckItem`, `StatTile` (hidden while values are `[#]`).
       Done when: AC-ABOUT-01, 02 and TC-ABOUT-01 pass. · Req: FR-ABOUT-01, FR-ABOUT-02 · Dep: T-SETUP-04
       Commits: `feat(about): add intro and mandate list` · `feat(about): add stat tiles hidden for placeholders` · `test(about): cover placeholder stats`
