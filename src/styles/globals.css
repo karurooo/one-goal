@@ -87,3 +87,13 @@
     @apply font-heading;
   }
 }
+
+/* AC-NAV-01: smooth anchor scroll; off for reduced motion (NFR-A11Y-04) */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
