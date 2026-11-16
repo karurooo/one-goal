@@ -1,5 +1,6 @@
 import { content } from '@/content'
 import { LogoMark } from './LogoMark'
+import { MobileMenu } from './MobileMenu'
 import { NavLinks, type NavItem } from './NavLinks'
 
 // `nav` defaults to office.json so adding an item there updates the header (AC-NAV-05).
@@ -14,6 +15,7 @@ export function SiteHeader({ nav = content.nav }: { nav?: NavItem[] }) {
           </span>
         </a>
         <NavLinks items={nav} />
+        <MobileMenu items={nav} />
       </div>
     </header>
   )
