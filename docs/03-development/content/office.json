@@ -1,0 +1,118 @@
+{
+  "_note": "Practice content for the Git & GitHub training. Placeholders only: no real phone numbers, no officials' names, no city seal. The Services and Contact nav items are appended by T-SERVICES-01 and T-CONTACT-01 (the planned conflict, docs/03-development/git-playbook.md §4). Stat tiles stay hidden until every [#] is a real figure from the office (AC-ABOUT-02).",
+  "office": {
+    "name": "City Sports Office",
+    "lgu": "City Government of Butuan",
+    "short": "CSO Butuan"
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Laro ng Lahi",
+      "href": "#laro"
+    }
+  ],
+  "hero": {
+    "headline": "Laro para sa tanan.",
+    "tagline": "Sports programs, facilities and events for every Butuanon, from barangay courts to national meets.",
+    "primaryCta": {
+      "label": "See services",
+      "href": "#services"
+    },
+    "secondaryCta": {
+      "label": "Laro ng Lahi",
+      "href": "#laro"
+    }
+  },
+  "headings": {
+    "about": "Building a city that plays.",
+    "services": "What we offer",
+    "contact": "Visit or message us"
+  },
+  "about": {
+    "intro": "The City Sports Office plans and runs the city's sports development programs, supports local athletes, and manages the use of city sports facilities.",
+    "mandate": [
+      "Develop grassroots sports in every barangay",
+      "Train and send city delegations to regional and national games",
+      "Manage schedules and use of city sports facilities",
+      "Organize city-wide sports events and tournaments"
+    ],
+    "stats": [
+      {
+        "value": "[#]",
+        "label": "barangays reached"
+      },
+      {
+        "value": "[#]",
+        "label": "sports programs"
+      },
+      {
+        "value": "[#]",
+        "label": "city facilities"
+      }
+    ]
+  },
+  "services": [
+    {
+      "icon": "Trophy",
+      "title": "Sports development",
+      "text": "Year-round training for basketball, volleyball, athletics, swimming and more."
+    },
+    {
+      "icon": "Medal",
+      "title": "Athlete delegations",
+      "text": "Selection and support of city athletes for Batang Pinoy, Palarong Pambansa and the Philippine National Games."
+    },
+    {
+      "icon": "MapPin",
+      "title": "Barangay sports clinics",
+      "text": "Free weekend clinics run with barangay councils and volunteer coaches."
+    },
+    {
+      "icon": "CalendarDays",
+      "title": "City events",
+      "text": "Fun runs, inter-barangay leagues and holiday tournaments."
+    }
+  ],
+  "facilities": {
+    "items": [
+      "Butuan Polysports Complex",
+      "City oval and track",
+      "Covered courts (by barangay)",
+      "Swimming pool"
+    ],
+    "note": "To request a facility, visit the office with a letter of request at least 7 working days before your event."
+  },
+  "laro": {
+    "title": "Laro ng Lahi",
+    "intro": "Play a quick game while you're here.",
+    "sipa": {
+      "title": "Sipa",
+      "text": "Keep the rattan ball in the air. How many kicks can you get in 60 seconds?",
+      "cta": "Play Sipa"
+    },
+    "sabong": {
+      "title": "Sabong (demo)",
+      "text": "A skill-based fighting game made by our team. No betting, no real money.",
+      "cta": "Play Sabong demo"
+    }
+  },
+  "contact": {
+    "address": "2nd Floor, City Library, Butuan City",
+    "hours": "Monday to Friday, 8:00 AM to 5:00 PM",
+    "phone": "(085) 000-0000",
+    "email": "sports.office@example.com",
+    "formTitle": "Send us a message"
+  },
+  "footer": {
+    "text": "City Sports Office · City Government of Butuan",
+    "disclaimer": "Practice website made for a Git & GitHub training. Not an official government site."
+  }
+}

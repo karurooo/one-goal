@@ -14,7 +14,7 @@
 
 | File                      | Purpose                                                                                                              |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `src/content/office.json` | All copy. Starter file: [`content/office.json`](../../content/office.json) in this spec set                          |
+| `src/content/office.json` | All copy. Starter file: [`content/office.json`](../03-development/content/office.json) in this spec set              |
 | `src/content/schema.ts`   | Zod schema (`officeContentSchema`) and the `OfficeContent` type                                                      |
 | `src/content/index.ts`    | `export const content = officeContentSchema.parse(raw)`. A bad edit fails the build and the tests, not the live site |
 
