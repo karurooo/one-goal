@@ -1,0 +1,5 @@
+# Reminder only (conventions §3): a migration changed without a pgTAP test
+changed=$(git diff-tree --no-commit-id --name-only -r HEAD)
+if echo "$changed" | grep -q '^supabase/migrations/' && ! echo "$changed" | grep -q '^supabase/tests/'; then
+  echo "Reminder: supabase/migrations changed but no test in supabase/tests did."
+fi
