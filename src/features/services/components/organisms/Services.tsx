@@ -1,5 +1,6 @@
 import { Section } from '@/components/layout/AppShell'
 import { content } from '@/content'
+import { FacilitiesBand } from '../molecules/FacilitiesBand'
 import { ServiceCard } from '../molecules/ServiceCard'
 
 export function Services() {
@@ -13,6 +14,7 @@ export function Services() {
           </li>
         ))}
       </ul>
+      <FacilitiesBand />
     </Section>
   )
 }
