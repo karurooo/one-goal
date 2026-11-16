@@ -1,3 +1,4 @@
+import { CourtLines, SipaBallArt } from '@/components/common'
 import { content } from '@/content'
 import { HeroActions } from '../molecules/HeroActions'
 
@@ -9,6 +10,7 @@ export function Hero() {
       id="home"
       className="relative scroll-mt-[68px] overflow-hidden bg-navy text-white [&_:focus-visible]:outline-gold"
     >
+      <CourtLines />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:py-24 lg:grid-cols-2">
         <div>
           <p className="mb-4 text-xs font-bold tracking-[0.12em] text-gold uppercase">
@@ -19,6 +21,9 @@ export function Hero() {
           <div className="mt-8">
             <HeroActions />
           </div>
+        </div>
+        <div className="order-first flex justify-end lg:order-last lg:justify-center">
+          <SipaBallArt className="size-28 sm:size-40 lg:size-80" />
         </div>
       </div>
     </section>
