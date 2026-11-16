@@ -11,6 +11,7 @@ export default defineConfig({
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
   test: {
+    globals: true, // Testing Library auto-cleans up only when afterEach is global
     environment: 'happy-dom',
     setupFiles: ['./src/testing/setup.ts'],
   },
