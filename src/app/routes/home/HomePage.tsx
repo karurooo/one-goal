@@ -1,17 +1,18 @@
 import { SiteHeader, SkipLink } from '@/components/layout/AppShell'
+import { Hero } from '@/features/hero'
 
-// Sections are empty until their tasks land; ids match the nav hrefs in office.json.
-const sectionIds = ['home', 'about', 'services', 'laro', 'contact'] as const
-
+// Empty sections stay as plain placeholders until their tasks land; ids match the nav hrefs.
 export function HomePage() {
   return (
     <>
       <SkipLink />
       <SiteHeader />
       <main id="main">
-        {sectionIds.map((id) => (
-          <section key={id} id={id} />
-        ))}
+        <Hero />
+        <section id="about" />
+        <section id="services" />
+        <section id="laro" />
+        <section id="contact" />
       </main>
     </>
   )
