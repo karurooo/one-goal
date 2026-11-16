@@ -127,7 +127,7 @@ Until T-LAYOUT-01 merges, section owners wrap their section in a plain `<section
       `About`, `MandateCard`, `CheckItem`, `StatTile` (hidden while values are `[#]`).
       Done when: AC-ABOUT-01, 02 and TC-ABOUT-01 pass. · Req: FR-ABOUT-01, FR-ABOUT-02 · Dep: T-SETUP-04
       Commits: `feat(about): add intro and mandate list` · `feat(about): add stat tiles hidden for placeholders` · `test(about): cover placeholder stats`
-- [ ] **T-SERVICES-01 Services (programs and facilities).** `Owner: Carlo` · Rev: Cliff · Branch: `feat/services-section`
+- [x] **T-SERVICES-01 Services (programs and facilities).** `Owner: Carlo` · Rev: Cliff · Branch: `feat/services-section`
       `Services`, `ServiceCard`, `FacilitiesBand`, `serviceIcons`; **append** Services to `nav`.
       Done when: AC-SVC-01…03 and TC-SVC-01 pass; Services shows in the header. · Req: FR-SVC-01, FR-SVC-02 · Dep: T-SETUP-04
       Commits: `feat(services): add program cards` · `feat(services): add facilities band` · `feat(nav): add services link`
