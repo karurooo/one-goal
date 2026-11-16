@@ -81,9 +81,23 @@
   body {
     @apply bg-background font-sans text-foreground antialiased;
   }
+  :focus-visible {
+    outline: 3px solid var(--color-navy);
+    outline-offset: 2px;
+  }
   h1,
   h2,
   h3 {
     @apply font-heading;
+  }
+}
+
+/* AC-NAV-01: smooth anchor scroll; off for reduced motion (NFR-A11Y-04) */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
