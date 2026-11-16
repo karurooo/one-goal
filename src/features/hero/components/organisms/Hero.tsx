@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative scroll-mt-[68px] overflow-hidden bg-navy text-white [&_:focus-visible]:outline-gold"
+      className="relative scroll-mt-17 overflow-hidden bg-navy text-white **:focus-visible:outline-gold"
     >
       <CourtLines />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:py-24 lg:grid-cols-2">
