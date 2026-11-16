@@ -119,7 +119,7 @@ Until T-LAYOUT-01 merges, section owners wrap their section in a plain `<section
       `SkipLink`, `LogoMark`, `NavLinks`, `MobileMenu` (Sheet), `SiteHeader`, `Section`, `useReducedMotion`, `NotFoundPage`.
       Done when: AC-NAV-01, 02, 04, 05 pass on the preview; keyboard-only works; TC-NAV-01…03 pass. · Req: FR-NAV-01, FR-NAV-02, FR-NAV-04, NFR-A11Y-02 · Dep: T-SETUP-04
       Commits: `feat(layout): add section template and skip link` · `feat(nav): add sticky header with section links` · `feat(nav): add mobile menu` · `feat(router): add not found page` · `test(nav): cover links, mobile menu and not found`
-- [ ] **T-HERO-01 Hero.** `Owner: Patrick` · Rev: Cliff · Branch: `feat/hero-section`
+- [x] **T-HERO-01 Hero.** `Owner: Patrick` · Rev: Cliff · Branch: `feat/hero-section`
       `Hero`, `HeroActions`, `SipaBallArt`, `CourtLines`.
       Done when: AC-HERO-01…03 pass at 1280×720 and 390×844. · Req: FR-HERO-01, FR-HERO-02 · Dep: T-SETUP-04
       Commits: `feat(hero): add headline, tagline and calls to action` · `style(hero): add court lines and sipa ball art`
