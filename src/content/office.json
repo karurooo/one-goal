@@ -21,6 +21,10 @@
     {
       "label": "Services",
       "href": "#services"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
     }
   ],
   "hero": {

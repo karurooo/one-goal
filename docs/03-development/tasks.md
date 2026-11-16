@@ -131,7 +131,7 @@ Until T-LAYOUT-01 merges, section owners wrap their section in a plain `<section
       `Services`, `ServiceCard`, `FacilitiesBand`, `serviceIcons`; **append** Services to `nav`.
       Done when: AC-SVC-01…03 and TC-SVC-01 pass; Services shows in the header. · Req: FR-SVC-01, FR-SVC-02 · Dep: T-SETUP-04
       Commits: `feat(services): add program cards` · `feat(services): add facilities band` · `feat(nav): add services link`
-- [ ] **T-CONTACT-01 Contact and footer.** `Owner: Ramil` · Backup: Cliff · Rev: Carlo or Patrick · Branch: `feat/contact-footer`
+- [x] **T-CONTACT-01 Contact and footer.** `Owner: Ramil` · Backup: Cliff · Rev: Carlo or Patrick · Branch: `feat/contact-footer`
       `Contact`, `ContactDetails`, `DetailRow`, `ContactForm` + `contactSchema`, `SiteFooter`; **append** Contact to `nav`.
       Done when: AC-CONTACT-01…04, TC-CONTACT-01/02 pass. · Req: FR-CONTACT-01, FR-CONTACT-02, FR-CONTACT-03, NFR-SEC-03 · Dep: T-SETUP-04
       Commits: `feat(contact): add office details` · `feat(contact): add contact form with validation and toast` · `feat(footer): add footer with practice-site disclaimer` · `feat(nav): add contact link` · `test(contact): cover form errors and toast`

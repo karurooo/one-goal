@@ -1,5 +1,6 @@
-import { SiteHeader, SkipLink } from '@/components/layout/AppShell'
+import { SiteFooter, SiteHeader, SkipLink } from '@/components/layout/AppShell'
 import { About } from '@/features/about'
+import { Contact } from '@/features/contact'
 import { Hero } from '@/features/hero'
 import { Services } from '@/features/services'
 
@@ -14,8 +15,9 @@ export function HomePage() {
         <About />
         <Services />
         <section id="laro" />
-        <section id="contact" />
+        <Contact />
       </main>
+      <SiteFooter />
     </>
   )
 }
