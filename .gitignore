@@ -25,3 +25,11 @@ dist-ssr
 ./graphify
 # graphify output
 graphify-out
+
+# Environment (keep the example)
+.env*
+!.env.example
+
+# Supabase
+supabase/.temp
+supabase/functions/.env
