@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/archivo-black/400.css';
+
+/* Design tokens: docs/02-design/ui-ux-design.md §1 */
+@theme {
+  --color-navy: #0b1f3a;
+  --color-court: #187563;
+  --color-court-bright: #1f8a70; /* decoration only, never behind text (4.3:1) */
+  --color-gold: #ffb703;
+  --color-paper: #f7f5ef;
+  --color-sand: #eae6da;
+  --color-ink-2: #34445c;
+  --color-mist: #d7dde6;
+  --color-line: #e4e0d4;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Archivo Black', system-ui, sans-serif;
+}
+
+/* shadcn semantic colors mapped onto the tokens: primary buttons are gold with navy text */
+:root {
+  --radius: 0.625rem; /* 10px buttons; cards use rounded-2xl (~16px) */
+  --background: var(--color-paper);
+  --foreground: var(--color-navy);
+  --card: #fff;
+  --card-foreground: var(--color-navy);
+  --popover: #fff;
+  --popover-foreground: var(--color-navy);
+  --primary: var(--color-gold);
+  --primary-foreground: var(--color-navy);
+  --secondary: var(--color-sand);
+  --secondary-foreground: var(--color-navy);
+  --muted: var(--color-sand);
+  --muted-foreground: var(--color-ink-2);
+  --accent: var(--color-sand);
+  --accent-foreground: var(--color-navy);
+  --destructive: #c0392b;
+  --border: var(--color-line);
+  --input: var(--color-line);
+  --ring: var(--color-court);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+}
