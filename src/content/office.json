@@ -1,88 +1,118 @@
 {
+  "_note": "Practice content for the Git & GitHub training. Placeholders only: no real phone numbers, no officials' names, no city seal. The Services and Contact nav items are appended by T-SERVICES-01 and T-CONTACT-01 (the planned conflict, docs/03-development/git-playbook.md §4). Stat tiles stay hidden until every [#] is a real figure from the office (AC-ABOUT-02).",
   "office": {
     "name": "City Sports Office",
-    "lgu": "Butuan City",
+    "lgu": "City Government of Butuan",
     "short": "CSO Butuan"
   },
   "nav": [
-    { "label": "Home", "href": "#home" },
-    { "label": "About", "href": "#about" },
-    { "label": "Laro ng Lahi", "href": "#laro" }
+    {
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Laro ng Lahi",
+      "href": "#laro"
+    }
   ],
   "hero": {
-    "headline": "Sports for every Butuanon.",
-    "tagline": "Programs, facilities and traditional games from the City Sports Office. Laro para sa tanan.",
-    "primaryCta": { "label": "See services", "href": "#services" },
-    "secondaryCta": { "label": "Laro ng Lahi", "href": "#laro" }
+    "headline": "Laro para sa tanan.",
+    "tagline": "Sports programs, facilities and events for every Butuanon, from barangay courts to national meets.",
+    "primaryCta": {
+      "label": "See services",
+      "href": "#services"
+    },
+    "secondaryCta": {
+      "label": "Laro ng Lahi",
+      "href": "#laro"
+    }
   },
   "headings": {
-    "about": "About the office",
-    "services": "Programs and facilities",
-    "contact": "Get in touch"
+    "about": "Building a city that plays.",
+    "services": "What we offer",
+    "contact": "Visit or message us"
   },
   "about": {
-    "intro": "The City Sports Office helps residents play, train and compete. We run community programs, support athletes and coaches, and look after the city's sports facilities.",
+    "intro": "The City Sports Office plans and runs the city's sports development programs, supports local athletes, and manages the use of city sports facilities.",
     "mandate": [
-      "Promote sports and physical fitness among residents",
-      "Support the city's athletes and delegations",
-      "Organize community sports programs and events",
-      "Manage and maintain city sports facilities"
+      "Develop grassroots sports in every barangay",
+      "Train and send city delegations to regional and national games",
+      "Manage schedules and use of city sports facilities",
+      "Organize city-wide sports events and tournaments"
     ],
     "stats": [
-      { "value": "[#]", "label": "Programs" },
-      { "value": "[#]", "label": "Facilities" },
-      { "value": "[#]", "label": "Athletes supported" }
+      {
+        "value": "[#]",
+        "label": "barangays reached"
+      },
+      {
+        "value": "[#]",
+        "label": "sports programs"
+      },
+      {
+        "value": "[#]",
+        "label": "city facilities"
+      }
     ]
   },
   "services": [
     {
-      "icon": "Users",
-      "title": "Community sports clinics",
-      "text": "Beginner-friendly coaching sessions open to residents of all ages."
+      "icon": "Trophy",
+      "title": "Sports development",
+      "text": "Year-round training for basketball, volleyball, athletics, swimming and more."
     },
     {
       "icon": "Medal",
-      "title": "Athlete and delegation support",
-      "text": "Assistance for local athletes and coaches joining competitions."
+      "title": "Athlete delegations",
+      "text": "Selection and support of city athletes for Batang Pinoy, Palarong Pambansa and the Philippine National Games."
+    },
+    {
+      "icon": "MapPin",
+      "title": "Barangay sports clinics",
+      "text": "Free weekend clinics run with barangay councils and volunteer coaches."
     },
     {
       "icon": "CalendarDays",
-      "title": "Sports events",
-      "text": "City leagues, fun runs and tournaments throughout the year."
-    },
-    {
-      "icon": "Dumbbell",
-      "title": "Fitness programs",
-      "text": "Group exercise and wellness activities for the community."
+      "title": "City events",
+      "text": "Fun runs, inter-barangay leagues and holiday tournaments."
     }
   ],
   "facilities": {
-    "items": ["Gymnasium", "Open courts", "Oval and track", "Multi-purpose hall"],
-    "note": "To request a facility, send a letter to the office at least two weeks before your event."
+    "items": [
+      "Butuan Polysports Complex",
+      "City oval and track",
+      "Covered courts (by barangay)",
+      "Swimming pool"
+    ],
+    "note": "To request a facility, visit the office with a letter of request at least 7 working days before your event."
   },
   "laro": {
     "title": "Laro ng Lahi",
-    "intro": "Traditional Filipino games, playable right here.",
+    "intro": "Play a quick game while you're here.",
     "sipa": {
       "title": "Sipa",
-      "text": "Keep the ball in the air for 60 seconds and post your score to the top 10.",
+      "text": "Keep the rattan ball in the air. How many kicks can you get in 60 seconds?",
       "cta": "Play Sipa"
     },
     "sabong": {
       "title": "Sabong (demo)",
-      "text": "A fighting game demo by our team. No betting, no real money.",
-      "cta": "Open demo"
+      "text": "A skill-based fighting game made by our team. No betting, no real money.",
+      "cta": "Play Sabong demo"
     }
   },
   "contact": {
-    "address": "[Office address], Butuan City",
-    "hours": "Mon–Fri, 8:00 AM – 5:00 PM",
+    "address": "2nd Floor, City Library, Butuan City",
+    "hours": "Monday to Friday, 8:00 AM to 5:00 PM",
     "phone": "(085) 000-0000",
-    "email": "sports@example.com",
+    "email": "sports.office@example.com",
     "formTitle": "Send us a message"
   },
   "footer": {
-    "text": "© City Sports Office, Butuan City",
-    "disclaimer": "Practice website for a training project. Not an official City Government of Butuan website."
+    "text": "City Sports Office · City Government of Butuan",
+    "disclaimer": "Practice website made for a Git & GitHub training. Not an official government site."
   }
 }
