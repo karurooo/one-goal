@@ -1,0 +1,88 @@
+{
+  "office": {
+    "name": "City Sports Office",
+    "lgu": "Butuan City",
+    "short": "CSO Butuan"
+  },
+  "nav": [
+    { "label": "Home", "href": "#home" },
+    { "label": "About", "href": "#about" },
+    { "label": "Laro ng Lahi", "href": "#laro" }
+  ],
+  "hero": {
+    "headline": "Sports for every Butuanon.",
+    "tagline": "Programs, facilities and traditional games from the City Sports Office. Laro para sa tanan.",
+    "primaryCta": { "label": "See services", "href": "#services" },
+    "secondaryCta": { "label": "Laro ng Lahi", "href": "#laro" }
+  },
+  "headings": {
+    "about": "About the office",
+    "services": "Programs and facilities",
+    "contact": "Get in touch"
+  },
+  "about": {
+    "intro": "The City Sports Office helps residents play, train and compete. We run community programs, support athletes and coaches, and look after the city's sports facilities.",
+    "mandate": [
+      "Promote sports and physical fitness among residents",
+      "Support the city's athletes and delegations",
+      "Organize community sports programs and events",
+      "Manage and maintain city sports facilities"
+    ],
+    "stats": [
+      { "value": "[#]", "label": "Programs" },
+      { "value": "[#]", "label": "Facilities" },
+      { "value": "[#]", "label": "Athletes supported" }
+    ]
+  },
+  "services": [
+    {
+      "icon": "Users",
+      "title": "Community sports clinics",
+      "text": "Beginner-friendly coaching sessions open to residents of all ages."
+    },
+    {
+      "icon": "Medal",
+      "title": "Athlete and delegation support",
+      "text": "Assistance for local athletes and coaches joining competitions."
+    },
+    {
+      "icon": "CalendarDays",
+      "title": "Sports events",
+      "text": "City leagues, fun runs and tournaments throughout the year."
+    },
+    {
+      "icon": "Dumbbell",
+      "title": "Fitness programs",
+      "text": "Group exercise and wellness activities for the community."
+    }
+  ],
+  "facilities": {
+    "items": ["Gymnasium", "Open courts", "Oval and track", "Multi-purpose hall"],
+    "note": "To request a facility, send a letter to the office at least two weeks before your event."
+  },
+  "laro": {
+    "title": "Laro ng Lahi",
+    "intro": "Traditional Filipino games, playable right here.",
+    "sipa": {
+      "title": "Sipa",
+      "text": "Keep the ball in the air for 60 seconds and post your score to the top 10.",
+      "cta": "Play Sipa"
+    },
+    "sabong": {
+      "title": "Sabong (demo)",
+      "text": "A fighting game demo by our team. No betting, no real money.",
+      "cta": "Open demo"
+    }
+  },
+  "contact": {
+    "address": "[Office address], Butuan City",
+    "hours": "Mon–Fri, 8:00 AM – 5:00 PM",
+    "phone": "(085) 000-0000",
+    "email": "sports@example.com",
+    "formTitle": "Send us a message"
+  },
+  "footer": {
+    "text": "© City Sports Office, Butuan City",
+    "disclaimer": "Practice website for a training project. Not an official City Government of Butuan website."
+  }
+}
