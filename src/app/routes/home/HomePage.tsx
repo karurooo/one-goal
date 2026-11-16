@@ -1,4 +1,5 @@
 import { SiteHeader, SkipLink } from '@/components/layout/AppShell'
+import { About } from '@/features/about'
 import { Hero } from '@/features/hero'
 
 // Empty sections stay as plain placeholders until their tasks land; ids match the nav hrefs.
@@ -9,7 +10,7 @@ export function HomePage() {
       <SiteHeader />
       <main id="main">
         <Hero />
-        <section id="about" />
+        <About />
         <section id="services" />
         <section id="laro" />
         <section id="contact" />
