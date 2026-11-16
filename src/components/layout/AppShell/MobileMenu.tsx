@@ -24,7 +24,7 @@ export function MobileMenu({ items }: { items: NavItem[] }) {
       <SheetContent
         side="right"
         showCloseButton={false}
-        className="border-white/10 bg-navy text-white [&_:focus-visible]:outline-gold"
+        className="border-white/10 bg-navy text-white **:focus-visible:outline-gold"
       >
         <SheetTitle className="sr-only">Menu</SheetTitle>
         <SheetDescription className="sr-only">Jump to a section of the page</SheetDescription>

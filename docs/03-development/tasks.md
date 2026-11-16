@@ -96,19 +96,19 @@ Until T-LAYOUT-01 merges, section owners wrap their section in a plain `<section
 - [ ] **T-SETUP-01 Repo, branches, protection, services.** `Owner: Carlo` · Backup: Patrick · No branch (settings)
       Create the repo with a README (GitHub's initial commit), create `development` and `staging` from `main`, set the default branch to `development`, protect all three ([deployment §4](../05-deployment/deployment.md#4-github-settings)), add teammates with the **Maintain** role (each takes a turn as Maintainer), run `scripts/create-issues.sh`. Create Supabase projects `cso-staging` and `cso-production` (Singapore). Connect Vercel (production branch `main`, staging domain on `staging`).
       Done when: a direct push to any protected branch is rejected; issues exist; Vercel shows a deployment for `main`. · Req: NFR-GIT-03, NFR-GIT-07
-- [ ] **T-SETUP-02 Scaffold the app.** `Owner: Patrick` · Rev: Carlo · Branch: `chore/scaffold-vite-app`
+- [x] **T-SETUP-02 Scaffold the app.** `Owner: Patrick` · Rev: Carlo · Branch: `chore/scaffold-vite-app`
       The existing Vite `react-ts` scaffold, strict TS flags (conventions §2.1), path aliases `@/` and `@schemas`, `.nvmrc`, `.gitignore` (adds `.env*`, `supabase/.temp`, `supabase/functions/.env`), `.env.example`, PR template, `docs/` (this spec set), `CLAUDE.md`.
       Done when: `npm run build` passes; the preview shows the Vite page. · Dep: T-SETUP-01
       Commits: `chore: scaffold vite react typescript app` · `chore: enable strict typescript and path aliases` · `docs: add specs, claude rules and pr template`
-- [ ] **T-SETUP-03 Tailwind, tokens and shadcn.** `Owner: Patrick` · Rev: Cliff · Branch: `chore/setup-tailwind-shadcn`
+- [x] **T-SETUP-03 Tailwind, tokens and shadcn.** `Owner: Patrick` · Rev: Cliff · Branch: `chore/setup-tailwind-shadcn`
       Tailwind, design tokens and self-hosted fonts (ui-ux §1), shadcn init + primitives (ui-ux §4), `cn()`, `globals.css`.
       Done when: a test page shows a gold shadcn `Button` in Archivo Black/Inter. · Req: NFR-A11Y-01 · Dep: T-SETUP-02
       Commits: `chore: add tailwind css with design tokens` · `chore: add self-hosted fonts` · `chore: add shadcn ui primitives`
-- [ ] **T-SETUP-04 Router, pages and content.** `Owner: Patrick` · Rev: Cliff · Branch: `feat/router-and-content`
+- [x] **T-SETUP-04 Router, pages and content.** `Owner: Patrick` · Rev: Cliff · Branch: `feat/router-and-content`
       `App.tsx`, `router.tsx` with `/`, lazy `/laro/sipa` placeholder and `*`; `HomePage` with empty sections and their ids; `src/content/{office.json,schema.ts,index.ts}` + content test (TC-CONT-01/02); `vercel.json` (deployment §3.2).
       Done when: `/laro/sipa` reloads on the preview without 404; content test passes. · Req: FR-NAV-03, FR-NAV-04, NFR-CONT-01, NFR-SEC-04 · Dep: T-SETUP-03
       Commits: `feat(router): add home, sipa and not found routes` · `feat(content): add office content with zod schema` · `test(content): validate office content` · `chore: add vercel rewrites and security headers`
-- [ ] **T-SETUP-05 Lint, hooks and frontend CI.** `Owner: Cliff` · Rev: Patrick · Branch: `chore/setup-lint-hooks-ci`
+- [x] **T-SETUP-05 Lint, hooks and frontend CI.** `Owner: Cliff` · Rev: Patrick · Branch: `chore/setup-lint-hooks-ci`
       ESLint, Prettier, Husky + lint-staged + commitlint (conventions §3), Vitest + RTL setup, `ci.yml` frontend job (deployment §2.2).
       Done when: `git commit -m "update"` is rejected; the PR shows the `frontend` check. · Req: NFR-GIT-02 · Dep: T-SETUP-02
       Commits: `chore: add eslint and prettier` · `chore: add husky, lint-staged and commitlint` · `test: add vitest and testing library setup` · `chore(ci): add frontend checks workflow`

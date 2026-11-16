@@ -12,7 +12,7 @@ type SectionProps = {
 // Page section template: eyebrow + h2 + content. scroll-mt keeps the title below the sticky header.
 export function Section({ id, title, eyebrow, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn('scroll-mt-[68px] px-4 py-16 md:py-20', className)}>
+    <section id={id} className={cn('scroll-mt-17 px-4 py-16 md:py-20', className)}>
       <div className="mx-auto max-w-6xl">
         {eyebrow && (
           <p className="mb-3 text-xs font-bold tracking-[0.12em] text-court uppercase">{eyebrow}</p>
