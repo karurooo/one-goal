@@ -1,0 +1,31 @@
+import { CourtLines, SipaBallArt } from '@/components/common'
+import { content } from '@/content'
+import { HeroActions } from '../molecules/HeroActions'
+
+const { headline, tagline } = content.hero
+
+export function Hero() {
+  return (
+    <section
+      id="home"
+      className="relative scroll-mt-17 overflow-hidden bg-navy text-white **:focus-visible:outline-gold"
+    >
+      <CourtLines />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:py-24 lg:grid-cols-2">
+        <div>
+          <p className="mb-4 text-xs font-bold tracking-[0.12em] text-gold uppercase">
+            {content.office.name}
+          </p>
+          <h1 className="text-[44px] leading-[1.02] md:text-[76px]">{headline}</h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist md:text-xl">{tagline}</p>
+          <div className="mt-8">
+            <HeroActions />
+          </div>
+        </div>
+        <div className="order-first flex justify-end lg:order-last lg:justify-center">
+          <SipaBallArt className="size-28 sm:size-40 lg:size-80" />
+        </div>
+      </div>
+    </section>
+  )
+}
